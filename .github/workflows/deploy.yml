@@ -31,6 +31,6 @@ jobs:
         # required inputs
         azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
         model_name:  ${{ steps.aml_registermodel.outputs.amlstudio-predict-customers }}
-        model_version: ${{ steps.aml_registermodel.outputs.1 }}
+        model_version: ${{ steps.aml_registermodel.outputs.26 }}
         # optional inputs
         parameters_file: "workspace.json"
