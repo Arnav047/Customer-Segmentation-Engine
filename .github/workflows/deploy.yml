@@ -33,4 +33,4 @@ jobs:
         model_name:  ${{ steps.aml_registermodel.outputs.amlstudio-predict-customers }}
         model_version: ${{ steps.aml_registermodel.outputs.amlstudio-predict-customers:1 }}
         # optional inputs
-        parameters_file: "compute.json"
+        parameters_file: "workspace.json"
