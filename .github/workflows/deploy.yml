@@ -24,13 +24,13 @@ jobs:
         experiment_name: "amlstudio-predict-customers"
     
     # Deploy model in Azure Machine Learning to ACI
-    - name: Arnav
+    - name: amlstudio-predict-customers
       id: amlstudio-predict-customers:1
       uses: Azure/aml-deploy@v1
       with:
         # required inputs
         azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
         model_name:  ${{ steps.aml_registermodel.outputs.amlstudio-predict-customers }}
-        model_version: ${{ steps.aml_registermodel.outputs.26 }}
+        model_version: ${{ steps.aml_registermodel.outputs.1 }}
         # optional inputs
         parameters_file: "workspace.json"
