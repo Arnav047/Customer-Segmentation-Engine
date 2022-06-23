@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - name: Check Out Repository
+    - name: Customer-Segmentation-Engine
       id: checkout_repository
       uses: actions/checkout@v2
 
@@ -31,6 +31,6 @@ jobs:
         # required inputs
         azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
         model_name:  ${{ steps.aml_registermodel.outputs.amlstudio-predict-customers }}
-        model_version: ${{ steps.aml_registermodel.outputs.amlstudio-predict-customers:1 }}
+        model_version: ${{ steps.aml_registermodel.outputs.1 }}
         # optional inputs
         parameters_file: "workspace.json"
