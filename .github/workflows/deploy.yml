@@ -1,55 +1,36 @@
-# Actions train a model on Azure Machine Learning
 name: Arnav
-on:
-  push:
-    branches:
-      - master
-    # paths:
-    #   - 'code/*'
+on: [push, pull_request]
 jobs:
-  train:
+  build:
     runs-on: ubuntu-latest
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Check Out Repository
       id: checkout_repository
       uses: actions/checkout@v2
-        
-    # Connect or Create the Azure Machine Learning Workspace
-    - name: Connect/Create Azure Machine Learning Workspace
+
+    # AML Workspace Action
+    - uses: Azure/aml-workspace@v1
       id: aml_workspace
-      uses: Azure/aml-workspace@v1
       with:
-          azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+        azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
     
-    # Connect or Create a Compute Target in Azure Machine Learning
-    - name: Arnav
-      id: 9832a897-1262-445e-ad9d-f86617e5fd8b
-      uses: Azure/aml-compute@v1
-      with:
-          azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
-    
-    # Submit a training run to the Azure Machine Learning
-    - name: Submit training run
-      id: aml_run
-      uses: Azure/aml-run@v1
-      with:
-          azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
-
-    # Register model in Azure Machine Learning model registry
-    - name: Register model
+    # AML Register Model Action
+    - uses: Azure/aml-registermodel@v1
       id: aml_registermodel
-      uses: Azure/aml-registermodel@v1
       with:
-          azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
-          run_id:  ${{ steps.aml_run.outputs.run_id }}
-          experiment_name: ${{ steps.aml_run.outputs.experiment_name }}
-
+        azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+        run_id:  "<your-run-id>"
+        experiment_name: "<your-experiment-name>"
+    
     # Deploy model in Azure Machine Learning to ACI
-    - name: amlstudio-predict-customers
-      id: 820256ca-0d86-45c3-9b98-058f4613af79
+    - name: Deploy model
+      id: aml_deploy
       uses: Azure/aml-deploy@v1
       with:
-          azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
-          model_name:  ${{ steps.aml_registermodel.outputs.amlstudio-predict-customers }}
-          model_version: ${{ steps.aml_registermodel.outputs.1 }}
+        # required inputs
+        azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+        model_name:  ${{ steps.aml_registermodel.outputs.model_name }}
+        model_version: ${{ steps.aml_registermodel.outputs.model_version }}
+        # optional inputs
+        parameters_file: "deploy.json"
