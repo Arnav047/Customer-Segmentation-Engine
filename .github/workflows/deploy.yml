@@ -23,8 +23,8 @@ jobs:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
     
     # Connect or Create a Compute Target in Azure Machine Learning
-    - name: Connect/Create Azure Machine Learning Compute Target
-      id: aml_compute_training
+    - name: Arnav
+      id: 9832a897-1262-445e-ad9d-f86617e5fd8b
       uses: Azure/aml-compute@v1
       with:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
@@ -46,10 +46,10 @@ jobs:
           experiment_name: ${{ steps.aml_run.outputs.experiment_name }}
 
     # Deploy model in Azure Machine Learning to ACI
-    - name: Deploy model
-      id: aml_deploy
+    - name: amlstudio-predict-customers
+      id: 820256ca-0d86-45c3-9b98-058f4613af79
       uses: Azure/aml-deploy@v1
       with:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
-          model_name:  ${{ steps.aml_registermodel.outputs.model_name }}
-          model_version: ${{ steps.aml_registermodel.outputs.model_version }}
+          model_name:  ${{ steps.aml_registermodel.outputs.amlstudio-predict-customers }}
+          model_version: ${{ steps.aml_registermodel.outputs.1 }}
