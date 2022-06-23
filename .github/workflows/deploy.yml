@@ -20,17 +20,17 @@ jobs:
       id: aml_registermodel
       with:
         azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
-        run_id:  "<your-run-id>"
-        experiment_name: "<your-experiment-name>"
+        run_id:  "820256ca-0d86-45c3-9b98-058f4613af79"
+        experiment_name: "amlstudio-predict-customers"
     
     # Deploy model in Azure Machine Learning to ACI
-    - name: Deploy model
-      id: aml_deploy
+    - name: Arnav
+      id: amlstudio-predict-customers:1
       uses: Azure/aml-deploy@v1
       with:
         # required inputs
         azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
-        model_name:  ${{ steps.aml_registermodel.outputs.model_name }}
-        model_version: ${{ steps.aml_registermodel.outputs.model_version }}
+        model_name:  ${{ steps.aml_registermodel.outputs.amlstudio-predict-customers }}
+        model_version: ${{ steps.aml_registermodel.outputs.1 }}
         # optional inputs
-        parameters_file: "deploy.json"
+        parameters_file: "workspace.json"
