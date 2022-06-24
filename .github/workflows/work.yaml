@@ -49,10 +49,10 @@ jobs:
           parameters_file: "registermodel.json"
 
     # Deploy model in Azure Machine Learning to ACI
-    - name: Deploy model
-      id: aml_deploy
+    - name: arnav-inferenecel
+      id: amlstudio-arnav-inferenece:1
       uses: Azure/aml-deploy@v1
       with:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
-          model_name:  ${{ steps.aml_registermodel.outputs.model_name }}
-          model_version: ${{ steps.aml_registermodel.outputs.model_version }}
+          model_name:  ${{ steps.aml_registermodel.outputs.arnav-inferenece }}
+          model_version: ${{ steps.aml_registermodel.outputs.1 }}
