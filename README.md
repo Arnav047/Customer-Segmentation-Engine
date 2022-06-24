@@ -11,9 +11,9 @@ It is done to improve the decision making in business. Unsupervised ML technique
 * Customer Segmentation Engine can be used by many IT companies like Amazon, Google, etc., or other businesses to group their customers based on the same characteristics and Improve the decision-making in business for the best marketing strategies.
 
 
-#### Azure Services and Visualization tool used in this project:
-1.Azure Machine Learning
-2.Power BI
+## Azure Services and Visualization tool used in this project:
+* Azure Machine Learning
+* Power BI
 
 
 ### Azure Machine Learning
