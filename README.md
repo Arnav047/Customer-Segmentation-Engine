@@ -35,7 +35,7 @@ It is done to improve the decision making in business. Unsupervised ML technique
 
 * Here is the Data Visualization link:https://app.powerbi.com/groups/792a075d-ee69-48e8-ab79-6d83e8352f16/dashboards/11acf8c2-ad3f-469b-85ed-a4024055aff0
 
-#### project links: 
+#### Data Model links: 
 
 * Inference Model
 https://ml.azure.com/experiments/id/272a88a3-752a-42f7-bc90-9ab5fee3aa63/runs/820256ca-0d86-45c3-9b98-058f4613af79?wsid=/subscriptions/9832a897-1262-445e-ad9d-f86617e5fd8b/resourcegroups/arnav/workspaces/Arnav&tid=62bd5af6-9be2-4db3-8eca-8ebdcd7b2962# 
