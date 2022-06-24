@@ -1,36 +1,11 @@
-name: Arnav
-on: [push, pull_request]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - name: Customer-Segmentation-Engine
-      id: checkout_repository
-      uses: actions/checkout@v2
-
-    # AML Workspace Action
-    - uses: Azure/aml-workspace@v1
-      id: aml_workspace
+  - name: Arnav
+      id: 9832a897-1262-445e-ad9d-f86617e5fd8b 
+      uses: Azure/aml-workspace@v1
       with:
-        azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
-    
-    # AML Register Model Action
-    - uses: Azure/aml-registermodel@v1
-      id: aml_registermodel
+          azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+          
+  - name: Arnav
+      id: 9832a897-1262-445e-ad9d-f86617e5fd8b
+      uses: Azure/aml-compute@v1
       with:
-        azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
-        run_id:  "820256ca-0d86-45c3-9b98-058f4613af79"
-        experiment_name: "amlstudio-predict-customers"
-    
-    # Deploy model in Azure Machine Learning to ACI
-    - name: amlstudio-predict-customers
-      id: amlstudio-predict-customers:1
-      uses: Azure/aml-deploy@v1
-      with:
-        # required inputs
-        azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
-        model_name:  ${{ steps.aml_registermodel.outputs.amlstudio-predict-customers }}
-        model_version: ${{ steps.aml_registermodel.outputs.1 }}
-        # optional inputs
-        parameters_file: "workspace.json"
+          azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
