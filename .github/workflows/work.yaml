@@ -56,3 +56,4 @@ jobs:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
           model_name:  ${{ steps.aml_registermodel.outputs.arnav-inferenece }}
           model_version: ${{ steps.aml_registermodel.outputs.1 }}
+          parameter_file: "workspace.json"
