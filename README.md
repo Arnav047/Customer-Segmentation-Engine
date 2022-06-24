@@ -7,6 +7,10 @@ It is done to improve the decision making in business. Unsupervised ML technique
 * The Goal of KMeans algorithm is to group the data into clusters that are distinct from other clusters i.e. each and every data in present in the same cluster is related to each other as well as it is non-related to data present in other clusters.
 
 
+## Problem Statement/Opportunity
+*Customer Segmentation Engine can be used by many IT companies like Amazon, Google, etc., or other businesses to group their customers based on the same characteristics and Improve the decision-making in business for the best marketing strategies.
+
+
 #### Azure Services and Visualization tool used in this project:
 1.Azure Machine Learning
 2.Power BI
