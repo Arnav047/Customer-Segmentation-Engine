@@ -16,15 +16,15 @@ jobs:
       uses: actions/checkout@v2
         
     # Connect or Create the Azure Machine Learning Workspace
-    - name: Connect/Create Azure Machine Learning Workspace
+    - name: Arnav
       id: aml_workspace
       uses: Azure/aml-workspace@v1
       with:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
     
     # Connect or Create a Compute Target in Azure Machine Learning
-    - name: Connect/Create Azure Machine Learning Compute Target
-      id: aml_compute_training
+    - name: Arnav
+      id: 9832a897-1262-445e-ad9d-f86617e5fd8b
       uses: Azure/aml-compute@v1
       with:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
@@ -45,6 +45,7 @@ jobs:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
           run_id:  ${{ steps.aml_run.outputs.run_id }}
           experiment_name: ${{ steps.aml_run.outputs.experiment_name }}
+          parameters_file: "registermodel.json"
 
     # Deploy model in Azure Machine Learning to ACI
     - name: Deploy model
