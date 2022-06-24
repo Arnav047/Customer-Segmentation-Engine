@@ -8,7 +8,7 @@ It is done to improve the decision making in business. Unsupervised ML technique
 
 
 ## Problem Statement/Opportunity
-*Customer Segmentation Engine can be used by many IT companies like Amazon, Google, etc., or other businesses to group their customers based on the same characteristics and Improve the decision-making in business for the best marketing strategies.
+* Customer Segmentation Engine can be used by many IT companies like Amazon, Google, etc., or other businesses to group their customers based on the same characteristics and Improve the decision-making in business for the best marketing strategies.
 
 
 #### Azure Services and Visualization tool used in this project:
