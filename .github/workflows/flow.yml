@@ -11,9 +11,10 @@ jobs:
 
     # AML Workspace Action
     - uses: Azure/aml-workspace@v1
-      id: aml_workspace
+      id: 9832a897-1262-445e-ad9d-f86617e5fd8b
       with:
         azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+        parameters_file: "workspace.json"
     
     # AML Register Model Action
     - uses: Azure/aml-registermodel@v1
@@ -32,6 +33,5 @@ jobs:
         azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
         model_name:  ${{ steps.aml_registermodel.outputs.amlstudio-predict-customers }}
         model_version: ${{ steps.aml_registermodel.outputs.1 }}
-        # optional inputs
-        parameters_file: "workspace.json"
+
 
