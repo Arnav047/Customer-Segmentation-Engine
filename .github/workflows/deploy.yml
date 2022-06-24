@@ -9,3 +9,12 @@
       uses: Azure/aml-compute@v1
       with:
           azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+          
+- name: Pipeline-Created-on-06-22-2022
+      id: a594cf6b-4c8a-43e0-af62-695b7be5056d
+      uses: Azure/aml-run@v1
+      with:
+          azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}  
+          
+          
+  
